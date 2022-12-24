@@ -1,0 +1,40 @@
+.to-do-form {
+    width: 75%;
+    margin: 0 auto;
+    background-color:lightgray;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 15px 0;
+}
+
+form {
+    width: 80%;
+}
+
+.form-controls {
+    min-height: 22px;
+}
+
+.form-controls:not(:last-child) {
+    margin-bottom: 5px;
+}
+
+label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+input {
+    width: 85%;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 15px;
+}

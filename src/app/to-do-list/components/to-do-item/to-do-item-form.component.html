@@ -1,0 +1,16 @@
+<div class="to-do-form">
+    <form [formGroup]="toDoForm">
+        <div *ngFor="let item of toDoFields" class="form-controls">
+            <label>
+                {{item.title}}
+                <input [formControlName]="item.name">
+            </label>
+        </div>
+
+        <div class="buttons">
+            <button type="submit" (click)="updateToDo()" *ngIf="toDoId">Update</button>
+            <button type="submit" (click)="updateToDo()" *ngIf="!toDoId">Save</button>
+            <button type="button" (click)="cancelUpdate()">Cancel</button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="btn-container">
+        <button (click)="addToDoItem()" class="add-to-do">Add to do</button>
+    </div>    
+    <div class="to-dos">
+        <ul>
+            <li *ngFor="let toDo of toDoList">
+                <div class="to-do-wrapper">
+                    <div class="to-do-info">
+                        <span>
+                            {{toDo?.label}}
+                        </span>
+                        <span>
+                            {{toDo?.description}}
+                        </span>
+                    </div>
+                    <div class="to-do-controls">
+                        <button (click)="editToDo(toDo)">Edit</button>
+                        <button (click)="completeRestoreToDo(toDo)">{{ toDo.done ? 'Restore' : 'Done'}}</button>
+                        <button (click)="deleteToDoItem(toDo.id)">Delete</button>
+                    </div>
+                </div>
+                <hr>
+            </li>
+        </ul>
+    </div>
+</div>
