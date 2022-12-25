@@ -9,13 +9,12 @@ import { ToDoService } from "src/app/services/to-do.service";
     styleUrls: ['./to-do-item.component.scss']
 })
 export class ToDoItemComponent {
-    @Input() toDoList: ToDoItem[];
-
+    @Input() toDo: ToDoItem;
 
     constructor(
         private router: Router,
         private toDoService: ToDoService
-    ) {}
+    ) { }
 
     editToDo(toDo: ToDoItem): void {
         this.router.navigate([`/${toDo.id}`]);
@@ -31,8 +30,8 @@ export class ToDoItemComponent {
 
             const day = date.getDate() < 10 ? `0${date.getDate()}` : date.getDate();
             const month = date.getMonth() < 10 ? `0${date.getMonth()}` : date.getMonth();
-            const year = date.getFullYear();     
-            
+            const year = date.getFullYear();
+
             toDo.done = `${day}-${month}-${year}`;
         } else {
             toDo.done = null;

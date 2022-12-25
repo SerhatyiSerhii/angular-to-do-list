@@ -76,10 +76,6 @@ export class ToDoItemFormComponent implements OnInit {
                 this.router.navigate(['']);
             });
         }
-
-        // this.toDoService.updateToDo(this.toDoId, updatedTodo).subscribe(() => {
-        //     this.router.navigate(['tasks']);
-        // }); 
     }
 
     cancelUpdate(): void {

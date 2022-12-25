@@ -1,7 +1,6 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
-import { IApiService } from "../models/i-api-service";
 import { ToDoItem } from "../models/to-do-item";
 
 
@@ -9,7 +8,7 @@ import { ToDoItem } from "../models/to-do-item";
     providedIn: 'root'
 })
 
-export class ApiService implements IApiService {
+export class ApiService {
     private baseUrl: string = 'http://localhost:3000';
 
     private get tasksUrl(): string {
