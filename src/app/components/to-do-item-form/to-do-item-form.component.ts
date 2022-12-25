@@ -64,7 +64,7 @@ export class ToDoItemFormComponent implements OnInit {
             this.toDoForm.controls.label.value,
             this.toDoForm.controls.description.value,
             this.toDoForm.controls.category.value,
-            this.toDo?.done || false
+            this.toDo?.done || null
         );
 
         if (this.toDoId) {

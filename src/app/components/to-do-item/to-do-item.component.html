@@ -1,0 +1,20 @@
+<ul>
+    <li *ngFor="let toDo of toDoList">
+        <div class="to-do-wrapper">
+            <div class="to-do-info">
+                <span>
+                    {{toDo?.label}}
+                </span>
+                <span>
+                    {{toDo?.description}}
+                </span>
+            </div>
+            <div class="to-do-controls">
+                <button (click)="editToDo(toDo)">Edit</button>
+                <input type="checkbox" [checked]="toDo.done" (change)="toggleDone(toDo)">
+                <button (click)="deleteToDoItem(toDo.id)">Delete</button>
+            </div>
+        </div>
+        <hr>
+    </li>
+</ul>

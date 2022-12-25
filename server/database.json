@@ -2,17 +2,17 @@
   "tasks": [
     {
       "id": 1,
-      "label": "Kitchen Cleanup123",
+      "label": "Kitchen Cleanup",
       "description": "Clean my dirty kitchen",
       "category": "house",
-      "done": false
+      "done": null
     },
     {
       "id": 2,
       "label": "Taxes",
       "description": "Start doing my taxes and contact my accountant jhon for advice",
       "category": "bureaucracy",
-      "done": "24-11-2022"
+      "done": "25-11-2022"
     }
   ]
 }

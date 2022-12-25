@@ -1,47 +1,31 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, Input } from "@angular/core";
+import { Router } from "@angular/router";
 import { ToDoItem } from "src/app/models/to-do-item";
 import { ToDoService } from "src/app/services/to-do.service";
-import { switchMap } from "rxjs/operators"
-import { Router } from "@angular/router";
 
 @Component({
-    selector: 'to-do-list',
-    templateUrl: './to-do-list.component.html',
-    styleUrls: ['./to-do-list.component.scss']
+    selector: 'to-do-item',
+    templateUrl: './to-do-item.component.html',
+    styleUrls: ['./to-do-item.component.scss']
 })
-export class ToDoListComponent implements OnInit {
-    toDoList: ToDoItem[];
+export class ToDoItemComponent {
+    @Input() toDoList: ToDoItem[];
+
 
     constructor(
         private router: Router,
         private toDoService: ToDoService
-    ) { }
-
-    ngOnInit(): void {
-        this.toDoService.getToDos().subscribe((data: ToDoItem[]) => {
-            this.toDoList = data;
-        });
-
-        this.toDoService.getToDoListUpdated().pipe(switchMap(() => {
-            return this.toDoService.getToDos();
-        })).subscribe((data: ToDoItem[]) => {
-            this.toDoList = data;
-        });
-    }
+    ) {}
 
     editToDo(toDo: ToDoItem): void {
         this.router.navigate([`/${toDo.id}`]);
-    }
-
-    addToDoItem() {
-        this.router.navigate(['add-do-to']);
     }
 
     deleteToDoItem(id: number): void {
         this.toDoService.deleteToDo(id).subscribe();
     }
 
-    completeRestoreToDo(toDo: ToDoItem): void {
+    toggleDone(toDo: ToDoItem): void {
         if (!toDo.done) {
             const date = new Date();
 
@@ -51,7 +35,7 @@ export class ToDoListComponent implements OnInit {
             
             toDo.done = `${day}-${month}-${year}`;
         } else {
-            toDo.done = false;
+            toDo.done = null;
         }
 
         this.toDoService.updateToDo(toDo.id, toDo).subscribe();

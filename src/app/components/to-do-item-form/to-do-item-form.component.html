@@ -8,8 +8,7 @@
         </div>
 
         <div class="buttons">
-            <button type="submit" (click)="updateToDo()" *ngIf="toDoId">Update</button>
-            <button type="submit" (click)="updateToDo()" *ngIf="!toDoId">Save</button>
+            <button type="submit" (click)="updateToDo()" >{{toDoId ? 'Update' : 'Save'}}</button>
             <button type="button" (click)="cancelUpdate()">Cancel</button>
         </div>
     </form>
