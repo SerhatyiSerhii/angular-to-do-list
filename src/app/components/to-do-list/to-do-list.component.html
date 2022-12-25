@@ -11,6 +11,11 @@
         <button (click)="addToDoItem()" class="add-to-do">Add to do</button>
     </div>
     <div class="to-dos">
-        <to-do-item [toDoList]="toDoListToShow"></to-do-item>
+        <ul>
+            <li *ngFor="let toDo of toDoListToShow">
+                <to-do-item [toDo]="toDo"></to-do-item>
+                <hr>
+            </li>
+        </ul>
     </div>
 </div>
