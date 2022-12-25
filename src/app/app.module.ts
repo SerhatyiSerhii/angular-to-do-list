@@ -3,16 +3,18 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
-import { ToDoListComponent } from './to-do-list/components/to-do-list/to-do-list.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ToDoListComponent } from './components/to-do-list/to-do-list.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { ToDoItemFormComponent } from './to-do-list/components/to-do-item/to-do-item-form.component';
+import { ToDoItemFormComponent } from './components/to-do-item-form/to-do-item-form.component';
+import { ToDoItemComponent } from './components/to-do-item/to-do-item.component';
 
 @NgModule({
   declarations: [
-    AppComponent,  
+    AppComponent,
     ToDoListComponent,
-    ToDoItemFormComponent
+    ToDoItemFormComponent,
+    ToDoItemComponent
   ],
   imports: [
     BrowserModule,
@@ -21,7 +23,7 @@ import { ToDoItemFormComponent } from './to-do-list/components/to-do-item/to-do-
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [HttpClient],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ToDoItemFormComponent } from './to-do-list/components/to-do-item/to-do-item-form.component';
-import { ToDoListComponent } from './to-do-list/components/to-do-list/to-do-list.component';
+import { ToDoItemFormComponent } from './components/to-do-item-form/to-do-item-form.component';
+import { ToDoListComponent } from './components/to-do-list/to-do-list.component';
 
 
 const routes: Routes = [
@@ -14,7 +14,7 @@ const routes: Routes = [
     component: ToDoItemFormComponent
   },
   {
-    path: '/add-to-do',
+    path: 'add-to-do',
     component: ToDoItemFormComponent
   }
 ];

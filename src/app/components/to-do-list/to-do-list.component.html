@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="btn-container">
+        <label>
+            Show completed
+            <input type="checkbox" (change)="toggleToDoList($event, true, two)" #one>
+        </label>
+        <label>
+            Show incompleted
+            <input type="checkbox" (change)="toggleToDoList($event, false, one)" #two>
+        </label>
+        <button (click)="addToDoItem()" class="add-to-do">Add to do</button>
+    </div>
+    <div class="to-dos">
+        <to-do-item [toDoList]="toDoListToShow"></to-do-item>
+    </div>
+</div>

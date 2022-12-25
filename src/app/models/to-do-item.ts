@@ -5,7 +5,8 @@ export class ToDoItem {
         public label: string,
         public description: string,
         public category: string,
-        public done: string | boolean) {
-            this.id = Number(Date.now());
-        }
+        public done: string | null
+    ) {
+        this.id = Date.now();
+    }
 }

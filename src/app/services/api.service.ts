@@ -1,7 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
-import { IApiService } from "../models/iapi-service";
+import { IApiService } from "../models/i-api-service";
 import { ToDoItem } from "../models/to-do-item";
 
 
